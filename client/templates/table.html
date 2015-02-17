@@ -1,4 +1,4 @@
-<template name="table">
+<template name="tableDisplay">
 <div class="container tab">
     <div class="row">
       <div class="col-sm-12">
@@ -17,27 +17,18 @@
                         <th><input type="text" class="form-control" placeholder="Job Description" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Contact" disabled></th>
                     </tr>
+
                 </thead>
+                {{#each jobs}}
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Communications</td>
-                        <td>Administrative</td>
-                        <td>Emily@meltwater.org</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Business</td>
-                        <td>Oystein</td>
-                        <td>Oystein@meltwater.org</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                    <tr>   
+                        <td><i class="fa fa-thumb-tack"></i></td>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{contact}}</td>
                     </tr>
                 </tbody>
+                {{/each}}
             </table>
         </div>
     </div>

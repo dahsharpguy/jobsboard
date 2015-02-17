@@ -42,4 +42,21 @@ $(document).ready(function(){
 
 });
 
+Template.registerHelper('jobs', function(){
+    return Jobs.find().fetch();
+})
 
+Template.jobsForm.events({
+    'submit form': function (e,t) {
+        e.preventDefault();
+        jobs = {
+            title: $('#title').val(),
+            description: $('#desc').val(),
+            contact: $('#contact').val()
+        }
+        
+        Jobs.insert(jobs);
+        // $('#submit-form').modal.hide();
+        // console.log(insertJobs);
+    },
+});
