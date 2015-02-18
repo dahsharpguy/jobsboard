@@ -10,3 +10,10 @@ insecure
 twbs:bootstrap
 fortawesome:fontawesome
 iron:router
+accounts-base
+ian:accounts-ui-bootstrap-3
+accounts-password
+accounts-facebook
+accounts-twitter
+accounts-github
+natestrauser:animate-css

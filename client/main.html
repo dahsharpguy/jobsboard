@@ -8,7 +8,9 @@
 
 <template name="display">
    <div class="container">
+   {{#if currentUser}}
      <button type="button" class="btn btn-sky text-uppercase btn-lg postjob" data-toggle="modal" data-target="#myModal">POST A JOB</button>
+     {{/if}}
    </div>
   {{> jobsForm}}
   <div>
