@@ -50,13 +50,12 @@ Template.jobsForm.events({
     'submit form': function (e,t) {
         e.preventDefault();
         jobs = {
-            title: $('#title').val(),
-            description: $('#desc').val(),
-            contact: $('#contact').val()
+            jobTitle: $('#title').val(),
+            jobDescription: $('#desc').val(),
+            jobContact: $('#contact').val(),
+
         }
         
         Jobs.insert(jobs);
-        // $('#submit-form').modal.hide();
-        // console.log(insertJobs);
     },
 });

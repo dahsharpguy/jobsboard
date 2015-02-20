@@ -13,10 +13,11 @@
             <table class="table">
                 <thead>
                     <tr class="filters">
-                        <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                        <th><i class="fa fa-suitcase"></i></th>
                         <th><input type="text" class="form-control" placeholder="Job Title" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Job Description" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Contact" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Category" disabled></th>
                     </tr>
 
                 </thead>
@@ -27,6 +28,7 @@
                         <td>{{title}}</td>
                         <td>{{description}}</td>
                         <td>{{contact}}</td>
+                        <td>{{category}}</td>
                     </tr>
                 </tbody>
                 {{/each}}
@@ -67,6 +69,14 @@
             <input type="email" class="form-control" id="contact" 
             placeholder="Email">
           </div>
+          <select class="form-control">
+          <label for="category">Category</label>
+            <option>Administration</option>
+            <option>Kitchen</option>
+            <option>Driver</option>
+            <option>Cleaner</option>
+            <option>Painter</option>
+          </select>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
