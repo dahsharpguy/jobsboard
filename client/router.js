@@ -14,49 +14,65 @@ Router.route('/about', function () {
 }, 
 {
   name: 'about'
+})
+
+Router.route('/jobs', function () {
+  this.render('jobs');
+}, 
+{
+  name: 'jobs'
+});
+
+Router.route('/jobsDetail', function () {
+  this.render('jobsDetail');
+}, 
+{
+  name: 'jobsDetail'
 });
 
 
-Router.route('/job', function () {
-  this.render('job');
-}, 
+Router.route('/jobs/:category/', function () {
+	this.render('jobs');
+
+},
+
 {
-  name: 'job',
-  
+	name: 'jobsCategory',
+	data: function(){
+		return {
+			 jobs: Jobs.find({category: this.params.category}).fetch().reverse(),
+			pageTitle: 'category:' + this.params.category
+
+		}
+	}
+})
+
+
+Router.route('/jobs/detail/:_id', function(){
+	this.render('jobsDetail');
+},
+{
+	name: 'jobsDetail',
+	data: function(){
+		var _id = this.params._id;
+		return{
+			jobs: Jobs.findOne(_id),
+			applications: Applications.find({jobs: _id}).fetch()
+		}
+	}
+})
+
+Router.route('/dashboard', function(){
+  this.render('dashboard');
+},{
+  name: 'dashboard',
   data: function(){
-  	return {
-  		job: Job.find().fetch(),
-  	}
-  }
-
-});
-
-  Router.route('/job/jobTitle/', function () {
-  this.render('job');
-}, 
-{
-  name: 'jobTitle',
-
-  data: function() { 
-  return {               
-  		job: Jobs.find({jobTitle: this.params.title}).fetch(), 
- 
-  	}
+    if (Meteor.userId()){
+      return {
+        jobs: Jobs.find({owner: Meteor.userId()}).fetch()
+      }
+    }
   }
 })
 
-//  Router.route('/job/jobDescription/:_id', function(){
-//  this.render('jobDescription');
 
-// },
-// {
-// 	name: 'jobDescription',
-
-// 	data: function () {
-// 		var_id = this.params_id;
-
-// 		return{
-// 			job: Job.findOne(_id)
-// 		}
-// 	}
-// });

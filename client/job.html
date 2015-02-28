@@ -1,0 +1,55 @@
+<template name="jobs">
+	<div class ="container cbox">
+	<h2><center>JOBS WE OFFER</center></h2>
+	{{> search}}
+	<br>
+		{{> autoformModals collection="Jobs" id="insertJobsForm" operation="insert"}}
+		<p>
+			<a href="{{pathFor 'jobs'}}" class="btn btn-default">All Jobs</a>
+			<a href="{{pathFor 'jobsCategory' category='fellows'}}" class="btn btn-primary">Teaching Fellow</a>
+			<a href="{{pathFor 'jobsCategory' category='web'}}" class="btn btn-success">Web Developer</a>
+			<a href="{{pathFor 'jobsCategory' category='mobile'}}" class="btn btn-info">Mobile Developer</a>
+			<a href="{{pathFor 'jobsCategory' category='kitchen'}}" class="btn btn-warning">Kitchen</a>
+			<a href="{{pathFor 'jobsCategory' category='other'}}" class="btn btn-danger">Other</a>
+		</p>
+		{{#each jobs}}
+		<div class="panel panel-default col-md-3 col-sm-3 col-lg-3 box">
+			<div class="panel-heading">
+				{{title}}				
+			</div>
+			<div class="panel-body">
+				<p>{{description}}</p>
+				<p>{{contacturl}}</p>
+				<p>{{email}}</p>
+				{{#if currentUser}}
+				<div class="panel-footer">
+					{{#afModal class="btn btn-default" collection="Jobs" operation="insert"}}
+					Add a new post
+					{{/afModal}}
+
+					{{#afModal class="btn btn-default" collection="Jobs" operation="update" doc=_id}}
+					Update post
+					{{/afModal}}
+
+					{{#afModal class="btn btn-danger" collection="Jobs" operation="remove" doc=_id}}
+					Delete post
+					{{/afModal}}
+					<a href="{{pathFor 'jobsDetail' }}" class="btn btn-primary">READ MORE >></a>
+
+				</div>
+				{{/if}}
+			</div>
+		</div>
+		{{/each}}
+		{{# if currentUser}}
+		{{#afModal class="btn" collection="Jobs" operation="insert"}}Post a Job{{/afModal}}
+		{{/ if}}
+
+		<div>
+		{{#with FS.GetFile Images picture}}
+  			In here, we can use the FS.File instance methods that work as helpers, such as {{url}} or {{isImage}}
+		{{/with}}
+		
+		</div>
+	</div>
+</template>

@@ -1,5 +1,4 @@
 <template name="masterLayout">
-<!-- {{> navbar}} -->
 
 {{> yield}}
 
@@ -7,6 +6,7 @@
 
 <template name="navbar">
   <nav class="navbar navbar-inverse">
+
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -21,7 +21,9 @@
       <ul class="nav navbar-nav">
         <li class="inactive"><a href="{{pathFor 'home'}}">Home</a></li>
         <li><a href="{{pathFor 'about'}}">About</a></li>
-        <li><a href="{{pathFor 'job'}}">Job</a></li>
+        <li><a href="{{pathFor 'jobs'}}">Job</a></li>
+        <li><a href="{{pathFor 'jobsDetail'}}">Job Details</a></li>
+        <li><a href="{{pathFor 'dashboard'}}">Dashboard</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{> loginButtons}}

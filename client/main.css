@@ -11,7 +11,8 @@ body {
   padding-bottom: 40px;
 }
 #imaginary_container{
-    margin-top:20%; /* Don't copy this */
+    /*margin-top:20%;*/ /* Don't copy this */
+    margin-left: 200px;
 }
 .stylish-input-group .input-group-addon{
     background: white !important; 
@@ -26,12 +27,6 @@ body {
     background:transparent;
 }
 
-.filterable {
-    margin-top: 15px;
-}
-.filterable .panel-heading .pull-right {
-    margin-top: -20px;
-}
 .filterable .filters input[disabled] {
     background-color: transparent;
     border: none;
@@ -82,7 +77,7 @@ outline: none;}
 color: #fff;
 background-color: #c04b59;
 border-top:2px solid #9a3c47;
-margin-top: 2px;
+
 }
 
 .btn-sunny {
@@ -103,7 +98,7 @@ outline: none;
 color: #fff;
 background-color: #d69840;
 border-top:2px solid #ab7a33;
-margin-top: 2px;
+
 }
 
 .btn-fresh {
@@ -126,7 +121,7 @@ background-color: #47a877;
 border-top:2px solid #39865f;
 outline: none;
 outline-offset: none;
-margin-top: 2px;
+
 }
 
 .btn-sky {
@@ -147,7 +142,7 @@ color: #fff;
 background-color: #0a97b9;
 border-top:2px solid #087994;
 outline-offset: none;
-margin-top: 2px;
+
 }
 
 .btn:focus,
@@ -157,9 +152,6 @@ margin-top: 2px;
    outline-offset: 0px;
 }
 
-.tab{
-  margin-top: 50px;
-}
 
 .image{
   width: 60px;
