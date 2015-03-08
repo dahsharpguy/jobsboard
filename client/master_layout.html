@@ -19,15 +19,17 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="inactive"><a href="{{pathFor 'home'}}">Home</a></li>
-        <li><a href="{{pathFor 'about'}}">About</a></li>
-        <li><a href="{{pathFor 'jobs'}}">Job</a></li>
-        <li><a href="{{pathFor 'jobsDetail'}}">Job Details</a></li>
-        <li><a href="{{pathFor 'dashboard'}}">Dashboard</a></li>
+        <li class="inactive"><a href="{{pathFor 'home'}}"><i class="fa fa-home"></i>  Home</a></li>
+        <li><a href="{{pathFor 'about'}}"><i class="fa fa-user"></i> About</a></li>
+        <li><a href="{{pathFor 'jobs'}}"><i class="fa fa-briefcase"></i> Job</a></li>
+        <li><a href="{{pathFor 'dashboard'}}"><i class="fa fa-bars"></i> Dashboard</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">   
         {{> loginButtons}}
       </ul>
+      <ul><i class="fa fa-keys"></i> {{> search}}</ul>
+      
+
     </div>
   </div>
 </nav>

@@ -34,16 +34,16 @@ Jobs.attachSchema(new SimpleSchema({
   	label: "E-mail address" 
   	},
 
-  picture: {
-    type: String,
-    autoform: {
-      afFieldInput: {
-        type: 'fileUpload',
-        collection: 'Images'
-    }
-  },
-  label: 'Choose File'
-},
+//   picture: {
+//     type: String,
+//     autoform: {
+//       afFieldInput: {
+//         type: 'fileUpload',
+//         collection: 'Images'
+//     }
+//   },
+//   label: 'Choose File'
+// },
 
     owner:{
     type: String,

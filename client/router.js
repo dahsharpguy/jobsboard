@@ -20,16 +20,13 @@ Router.route('/jobs', function () {
   this.render('jobs');
 }, 
 {
-  name: 'jobs'
+  name: 'jobs',
+  data: function(){
+    return {
+       jobs: Jobs.find().fetch()
+   }
+  }
 });
-
-Router.route('/jobsDetail', function () {
-  this.render('jobsDetail');
-}, 
-{
-  name: 'jobsDetail'
-});
-
 
 Router.route('/jobs/:category/', function () {
 	this.render('jobs');
